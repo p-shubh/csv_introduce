@@ -13,6 +13,7 @@ func main() {
 
 	// fmt.Println(records)
 	place(input, records)
+	getcity(input, records)
 }
 
 func readCsvFile(filePath string) [][]string {
@@ -43,4 +44,16 @@ func place(inputs string, records [][]string) {
 		}
 	}
 
+}
+
+func getcity(inputs string, records [][]string) {
+
+	var cityName string
+	for i := 0; i < len(records); i++ {
+		if records[i][0] == inputs {
+			cityName = records[i][1]
+			break
+		}
+	}
+	fmt.Println(cityName)
 }
